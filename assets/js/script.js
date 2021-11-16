@@ -62,7 +62,15 @@ const NombreMascota = document.getElementById('nombreMascota')
 const TipoAnimal = document.getElementById('tipo')
 const Enfermedad = document.getElementById('enfermedad')
 const telefono = document.getElementById('telefono')
+const resultado = document.getElementById('resultado')
 //-+-+-+--+++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+const pegar = function () {
+
+    resultado.innerHTML(`
+    < li > ${todomascota.datosPropetario()} < /li>
+    < li > ${tododueño.datosAnimal()} < /li>
+    `)
+}
 agregar.addEventListener('click', (e) => {
     e.preventDefault()
     let tododueño = new Propietario()
@@ -73,24 +81,11 @@ agregar.addEventListener('click', (e) => {
     todomascota.nombreMascota = NombreMascota.value
     todomascota.enfermedad = Enfermedad.value
     todomascota.tipo = TipoAnimal.value
+    //PRUEBA QUE FUNCIONE
     console.log(tododueño)
     console.log(todomascota)
     console.log(tododueño.datosPropetario())
     console.log(todomascota.datosAnimal())
-
-
-
-
-
-
-
-
-
-
-
+    pegar()
 })
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-const card = document.getElementById('resultado')
-const cardtitulo = document.getElementById('cardtitulo')
-const cardmascota = document.getElementById('cardmascota')
-const carddueño = document.getElementById('cardpropetario')

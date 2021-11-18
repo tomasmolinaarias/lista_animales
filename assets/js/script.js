@@ -64,13 +64,13 @@ const Enfermedad = document.getElementById('enfermedad')
 const telefono = document.getElementById('telefono')
 const resultado = document.getElementById('resultado')
 //-+-+-+--+++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-const pegar = function () {
+// const pegar = function () {
 
-    resultado.innerHTML(`
-    < li > ${todomascota.datosPropetario()} < /li>
-    < li > ${tododueño.datosAnimal()} < /li>
-    `)
-}
+//     resultado.innerHTML(`
+//     < li > ${todomascota.datosPropetario()} < /li>
+//     < li > ${tododueño.datosAnimal()} < /li>
+//     `)
+// }
 agregar.addEventListener('click', (e) => {
     e.preventDefault()
     let tododueño = new Propietario()
@@ -86,6 +86,6 @@ agregar.addEventListener('click', (e) => {
     console.log(todomascota)
     console.log(tododueño.datosPropetario())
     console.log(todomascota.datosAnimal())
-    pegar()
+    // pegar()
 })
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

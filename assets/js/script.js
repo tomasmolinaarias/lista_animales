@@ -7,7 +7,7 @@ class Propietario {
     }
     datosPropetario() {
         return `el nombre del dueño es ${this.dueño} el numero telefonico es 
-        ${this.telefono} y la direccion es ${this.Direccion}`
+        ${parseInt(this.telefono)} y la direccion es ${this.Direccion}`
     }
 }
 //+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -63,34 +63,33 @@ const TipoAnimal = document.getElementById('tipo')
 const Enfermedad = document.getElementById('enfermedad')
 const telefono = document.getElementById('telefono')
 const resultado = document.getElementById('resultadocard')
+const animalacumlable = []
 
 //-+-+-+--+++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-// const pegar = function () {
 
-//     resultado.innerHTML(`
-//     < li > ${todomascota.datosPropetario()} < /li>
-//     < li > ${tododueño.datosAnimal()} < /li>
-//     `)
-// }
 agregar.addEventListener('click', (e) => {
     e.preventDefault()
-    let tododueño = new Propietario()
-    let todomascota = new Mascota()
-    tododueño.dueño = propietario.value
-    tododueño.Direccion = Direccion.value
-    tododueño.Telefono = parseInt(telefono.value)
-    todomascota.nombreMascota = NombreMascota.value
-    todomascota.enfermedad = Enfermedad.value
-    todomascota.tipo = TipoAnimal.value
+    const tododueño = new Propietario(
+        propietario.value,
+        propietario.value,
+        parseInt(telefono.value));
+    const todomascota = new Mascota(
+        NombreMascota.value,
+        Enfermedad.value,
+        TipoAnimal.value);
+    //trate de que se juntara las carta pero me enrede
+    // animalacumlable.push(todomascota, tododueño);
+    // console.log(animalacumlable);
+    //------------------------------------------------------
     //PRUEBA QUE FUNCIONE
     console.log(tododueño)
     console.log(todomascota)
     console.log(tododueño.datosPropetario())
     console.log(todomascota.datosAnimal())
-    // pegar()
+
     const pegar = () => {
         return resultado.innerHTML = `
-        <div class="card" style="width: 18rem; text-center mb-5 mt-5">
+        <div class="card text-center" style="width: 18rem;  mb-5 mt-5">
         <div class="card-body">
             <p class="card-text">${todomascota.datosAnimal()}</p>
             <p class="card-text">${tododueño.datosPropetario()}</p>          
@@ -99,4 +98,5 @@ agregar.addEventListener('click', (e) => {
         `
     }
     pegar()
+
 })

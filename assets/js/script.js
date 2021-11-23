@@ -62,7 +62,8 @@ const NombreMascota = document.getElementById('nombreMascota')
 const TipoAnimal = document.getElementById('tipo')
 const Enfermedad = document.getElementById('enfermedad')
 const telefono = document.getElementById('telefono')
-const resultado = document.getElementById('resultado')
+const resultado = document.getElementById('resultadocard')
+
 //-+-+-+--+++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 // const pegar = function () {
 
@@ -87,5 +88,15 @@ agregar.addEventListener('click', (e) => {
     console.log(tododueño.datosPropetario())
     console.log(todomascota.datosAnimal())
     // pegar()
+    const pegar = () => {
+        return resultado.innerHTML = `
+        <div class="card" style="width: 18rem; text-center mb-5 mt-5">
+        <div class="card-body">
+            <p class="card-text">${todomascota.datosAnimal()}</p>
+            <p class="card-text">${tododueño.datosPropetario()}</p>          
+        </div>
+        </div>
+        `
+    }
+    pegar()
 })
-//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
